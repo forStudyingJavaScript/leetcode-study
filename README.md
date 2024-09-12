@@ -13,29 +13,7 @@
 ## 👋 팀원 소개
 
 <table>
-    <tr height="160px">
-        <td align="center" width="150px">
-            <a href="https://github.com/oris8"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/154623483?v=4"/></a>
-            <br />
-            <strong>이정민</strong>
-        </td>
-        <td align="center" width="150px">
-            <a href="https://github.com/FrogBaek"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/95288868?v=4"/></a>
-            <br />
-            <strong>FrogBaek</strong>
-        </td>
-    </tr>
-    <tr height="50px">
-        <td align="center">
-            <a href="https://github.com/oris8">:octocat: GitHub</a>
-            <br />
-            <a href="./oris8">:memo: 푼 문제들</a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/FrogBaek">:octocat: GitHub</a>
-            <br />
-            <a href="./frogbaek">:memo: 푼 문제들</a>
-    </tr>
+
 </table>
 
 ## 📌 스터디 참여 방식
