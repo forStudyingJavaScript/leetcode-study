@@ -12,3 +12,15 @@ const missingNumber = (nums) => {
     if (!nums.includes(i)) return i;
   }
 };
+// Runtime:  277 ms  Beats 6.21%
+// Memory:   51.46MB Beats 45.81%
+
+// 충격적인 위치 . . 누적합으로 바꾸기
+const missingNumber2 = (nums) => {
+  return (
+    (nums.length * (nums.length + 1)) / 2 -
+    nums.reduce((acc, num) => acc + num, 0)
+  );
+};
+// Runtime:  59 ms  Beats 58.97%
+// Memory:   51.29MB Beats 64.91%
