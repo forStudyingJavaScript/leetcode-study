@@ -7,7 +7,7 @@ var maxProfit = function (prices) {
   let profit = 0;
 
   for (let i = 0; i < prices.length; i++) {
-    if (min > prices[i] && prices.indexOf(min) < i) min = prices[i];
+    if (min > prices[i]) min = prices[i];
     profit = prices[i] - min > profit ? prices[i] - min : profit;
   }
 
