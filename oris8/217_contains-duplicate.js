@@ -15,3 +15,17 @@ const containsDuplicate = (nums) => {
 
   return nums.length !== bucket.size;
 };
+
+// Runtime:  88 ms  Beats  29.90%
+// Memory:   62.83MB Beats 34.73%
+
+const containsDuplicate2 = (nums) => {
+  const bucket = new Set();
+
+  for (let i = 0; i < nums.length; i++) {
+    if (bucket.has(nums[i])) return true;
+    bucket.add(num);
+  }
+};
+// Runtime:  80 ms  Beats  55.24%
+// Memory:   62.14MB Beats 54.23%
