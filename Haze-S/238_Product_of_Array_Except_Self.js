@@ -5,16 +5,17 @@
 var productExceptSelf = function (nums) {
   let products = Array(nums.length).fill(1);
 
-  let before = 1;
+  let left = 1;
   for (let i = 0; i < nums.length; i++) {
-    products[i] *= before;
-    before *= nums[i];
+    products[i] *= left;
+    left *= nums[i];
   }
 
-  let after = 1;
+  let right = 1;
   for (let i = nums.length - 1; i >= 0; i--) {
-    products[i] *= after;
-    after *= nums[i];
+    products[i] *= right;
+    right *= nums[i];
+    console.log(i, products);
   }
 
   return products;
