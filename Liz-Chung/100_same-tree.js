@@ -11,6 +11,7 @@
  * @param {TreeNode} q
  * @return {boolean}
  */
+
 var isSameTree = function(p, q) {
     if (!p && !q) return true;
     
