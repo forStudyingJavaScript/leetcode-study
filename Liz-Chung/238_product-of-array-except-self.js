@@ -2,6 +2,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
+
 var productExceptSelf = function(nums) {
     const n = nums.length;
     const answer = new Array(n).fill(1);
