@@ -33,3 +33,22 @@ Constraints:
 2 <= cost.length <= 1000
 0 <= cost[i] <= 999
 */
+/**
+ * @param {number[]} cost
+ * @return {number}
+ */
+var minCostClimbingStairs = function (cost) {
+  const n = cost.length;
+
+  let first_stair = 0;
+  let second_stair = 0;
+
+  for (let i = 1; i < n; i++) {
+    let current = Math.min(first_stair + cost[i - 1], second_stair + cost[i]);
+
+    first_stair = second_stair;
+    second_stair = current;
+  }
+
+  return second_stair;
+};
