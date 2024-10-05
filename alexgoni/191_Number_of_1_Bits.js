@@ -11,5 +11,3 @@ var hammingWeight = function (n) {
 
   return result;
 };
-
-console.log(hammingWeight(2147483645));
