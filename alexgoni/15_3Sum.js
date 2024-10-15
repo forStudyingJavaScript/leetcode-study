@@ -37,7 +37,3 @@ var threeSum = function (nums) {
 
   return result;
 };
-
-console.log(threeSum([0, 0, 0, 0]));
-
-// -4, -1, -1 ,0 ,1, 2
