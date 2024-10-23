@@ -1,0 +1,18 @@
+/**
+ * @param {number} n
+ * @return {number[]}
+ */
+var countBits = function (n) {
+  const result = new Array(n + 1).fill(0);
+
+  for (let i = 1; i <= n; i++) {
+    result[i] = result[i >> 1] + (i & 1);
+  }
+
+  return result;
+};
+
+// Runtime:  1 ms     Beats 99.45%
+// Memory:   56.49 MB Beats 52.28%
+
+// 14m 28s
