@@ -3,8 +3,13 @@
  * 10m
  */
 
+function TrieNode() {
+  this.children = {}; // 자식 노드를 저장하는 객체
+  this.isEnd = false; // 단어의 끝인지 여부 표시
+}
+
 var Trie = function () {
-  this.words = new Set();
+  this.root = new TrieNode();
 };
 
 /**
@@ -12,7 +17,17 @@ var Trie = function () {
  * @return {void}
  */
 Trie.prototype.insert = function (word) {
-  this.words.add(word);
+  let node = this.root;
+
+  for (const char of word) {
+    // 해당 문자가 자식 노드에 없다면 새로 생성
+    if (!node.children[char]) node.children[char] = new TrieNode();
+    // 다음 문자로 이동
+    node = node.children[char];
+  }
+
+  // 단어의 끝을 표시
+  node.isEnd = true;
 };
 
 /**
@@ -20,7 +35,16 @@ Trie.prototype.insert = function (word) {
  * @return {boolean}
  */
 Trie.prototype.search = function (word) {
-  return this.words.has(word);
+  let node = this.root;
+
+  for (const char of word) {
+    // 해당 문자가 없으면 false 반환
+    if (!node.children[char]) return false;
+    node = node.children[char];
+  }
+
+  // 단어의 끝인지 확인
+  return node.isEnd;
 };
 
 /**
@@ -28,10 +52,16 @@ Trie.prototype.search = function (word) {
  * @return {boolean}
  */
 Trie.prototype.startsWith = function (prefix) {
-  for (const word of this.words) {
-    if (word.startsWith(prefix)) return true;
+  let node = this.root;
+
+  for (const char of prefix) {
+    // 접두사에 해당하는 문자가 없으면 false 반환
+    if (!node.children[char]) return false;
+    node = node.children[char];
   }
-  return false;
+
+  // 접두사가 존재하면 true 반환
+  return true;
 };
 
 /**
