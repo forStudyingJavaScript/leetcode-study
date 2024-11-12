@@ -5,7 +5,6 @@
  */
 function getSum (a, b) {
     let carry = 0;
-    let result = 0;
 
     while (b !== 0) {
         let sum = a ^ b;
