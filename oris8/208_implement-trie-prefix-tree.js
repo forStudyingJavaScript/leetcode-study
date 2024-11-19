@@ -32,6 +32,15 @@ class Trie {
   constructor() {
     this.root = new TrieNode();
   }
+
+  traverse(word) {
+    let node = this.root;
+    for (let char of word) {
+      node = node.children[char];
+      if (!node) return null;
+    }
+    return node;
+  }
 }
 
 /**
@@ -54,14 +63,8 @@ Trie.prototype.insert = function (word) {
  * @return {boolean}
  */
 Trie.prototype.search = function (word) {
-  let node = this.root;
-  for (const char of word) {
-    if (!node.children[char]) {
-      return false;
-    }
-    node = node.children[char];
-  }
-  return !!node.words.has(word);
+  let node = this.traverse(word);
+  return !!node && node.words.has(word);
 };
 
 /**
@@ -69,14 +72,8 @@ Trie.prototype.search = function (word) {
  * @return {boolean}
  */
 Trie.prototype.startsWith = function (prefix) {
-  let node = this.root;
-  for (const char of prefix) {
-    if (!node.children[char]) {
-      return false;
-    }
-    node = node.children[char];
-  }
-  return true;
+  let node = this.traverse(prefix);
+  return !!node;
 };
 
 /**
